@@ -20,24 +20,24 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_ESCAPE,      KC_Q,           KC_LCBR,        KC_LBRC,        KC_LPRN,        KC_LABK,                                        KC_RABK,        KC_RPRN,        KC_RBRC,        KC_RCBR,        KC_Z,           KC_QUES,        
-    KC_GRAVE,       KC_DQUO,        KC_B,           KC_H,           KC_G,           KC_QUOTE,                                       KC_MINUS,       KC_DOT,         KC_COMMA,       KC_J,           KC_X,           KC_EXLM,        
-    KC_TAB,         MT(MOD_LCTL, KC_C),MT(MOD_LALT, KC_S),MT(MOD_LGUI, KC_N),MT(MOD_LSFT, KC_T),KC_K,                                           KC_UNDS,        MT(MOD_RSFT, KC_A),MT(MOD_RGUI, KC_E),MT(MOD_RALT, KC_I),MT(MOD_RCTL, KC_M),KC_ENTER,       
-    KC_TRANSPARENT, KC_P,           KC_F,           ALL_T(KC_L),    MEH_T(KC_D),    KC_V,                                           KC_SLASH,       MEH_T(KC_U),    ALL_T(KC_O),    KC_Y,           KC_W,           KC_TRANSPARENT, 
+    KC_ESCAPE,      KC_Q,           KC_LCBR,        KC_LBRC,        KC_LPRN,        KC_LABK,                                        KC_RABK,        KC_RPRN,        KC_RBRC,        KC_RCBR,        KC_Z,           KC_QUES,
+    KC_GRAVE,       KC_DQUO,        KC_B,           KC_H,           KC_G,           KC_QUOTE,                                       KC_MINUS,       KC_DOT,         KC_COMMA,       KC_J,           KC_X,           KC_EXLM,
+    KC_TAB,         MT(MOD_LCTL, KC_C),MT(MOD_LALT, KC_S),MT(MOD_LGUI, KC_N),MT(MOD_LSFT, KC_T),KC_K,                                           KC_UNDS,        MT(MOD_RSFT, KC_A),MT(MOD_RGUI, KC_E),MT(MOD_RALT, KC_I),MT(MOD_RCTL, KC_M),KC_ENTER,
+    KC_TRANSPARENT, KC_P,           KC_F,           ALL_T(KC_L),    MEH_T(KC_D),    KC_V,                                           KC_SLASH,       MEH_T(KC_U),    ALL_T(KC_O),    KC_Y,           KC_W,           KC_TRANSPARENT,
                                                     KC_R,           OSL(2),                                         OSL(1),         KC_SPACE
   ),
   [1] = LAYOUT_voyager(
-    KC_A,           KC_B,           KC_C,           KC_D,           KC_E,           KC_F,                                           KC_NO,          KC_F14,         KC_NO,          KC_F15,         KC_NO,          KC_NO,          
-    KC_SLASH,       KC_PLUS,        KC_9,           KC_8,           KC_7,           KC_MINUS,                                       KC_NO,          KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,KC_NO,          KC_NO,          
-    KC_ASTR,        KC_0,           KC_6,           KC_5,           KC_4,           KC_DOT,                                         KC_NO,          MT(MOD_RSFT, KC_MEDIA_PREV_TRACK),MT(MOD_RGUI, KC_MEDIA_PLAY_PAUSE),MT(MOD_RALT, KC_MEDIA_NEXT_TRACK),KC_RIGHT_CTRL,  KC_TRANSPARENT, 
-    QK_LLCK,        KC_EQUAL,       KC_3,           KC_2,           KC_1,           KC_PERC,                                        KC_NO,          KC_MEH,         KC_HYPR,        KC_NO,          KC_NO,          QK_LLCK,        
+    KC_A,           KC_B,           KC_C,           KC_D,           KC_E,           KC_F,                                           KC_NO,          KC_F14,         KC_NO,          KC_F15,         KC_NO,          KC_NO,
+    KC_SLASH,       KC_PLUS,        KC_9,           KC_8,           KC_7,           KC_MINUS,                                       KC_NO,          KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,KC_NO,          KC_NO,
+    KC_ASTR,        KC_0,           KC_6,           KC_5,           KC_4,           KC_DOT,                                         KC_NO,          MT(MOD_RSFT, KC_MEDIA_PREV_TRACK),MT(MOD_RGUI, KC_MEDIA_PLAY_PAUSE),MT(MOD_RALT, KC_MEDIA_NEXT_TRACK),KC_RIGHT_CTRL,  KC_TRANSPARENT,
+    QK_LLCK,        KC_EQUAL,       KC_3,           KC_2,           KC_1,           KC_PERC,                                        KC_NO,          KC_MEH,         KC_HYPR,        KC_NO,          KC_NO,          QK_LLCK,
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_NO,          KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
     KC_NO,          KC_F11,         RGUI(RSFT(KC_GRAVE)),MAC_MISSION_CONTROL,LGUI(KC_GRAVE), KC_PAGE_UP,                                     LGUI(LSFT(KC_K)),LALT(KC_Q),     LGUI(KC_SLASH), LCTL(KC_T),     LALT(LSFT(KC_I)),LGUI(LCTL(KC_D)),
-    KC_NO,          KC_F12,         ST_MACRO_0,     RSFT(KC_F12),   ST_MACRO_1,     KC_MS_WH_UP,                                    LGUI(KC_X),     LGUI(KC_LBRC),  LGUI(LSFT(KC_I)),LGUI(KC_RBRC),  LGUI(LSFT(KC_Z)),LGUI(KC_F2),    
-    KC_NO,          KC_LEFT_CTRL,   TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    KC_MS_WH_DOWN,                                  LGUI(KC_C),     KC_LEFT,        KC_UP,          KC_RIGHT,       LGUI(KC_Z),     LGUI(KC_D),     
-    QK_LLCK,        KC_NO,          KC_MS_WH_LEFT,  KC_HYPR,        MEH_T(KC_MS_WH_RIGHT),KC_PGDN,                                        LGUI(KC_V),     KC_BSPC,        KC_DOWN,        KC_DELETE,      KC_F2,          QK_LLCK,        
+    KC_NO,          KC_F12,         ST_MACRO_0,     RSFT(KC_F12),   ST_MACRO_1,     KC_MS_WH_UP,                                    LGUI(KC_X),     LGUI(KC_LBRC),  LGUI(LSFT(KC_I)),LGUI(KC_RBRC),  LGUI(LSFT(KC_Z)),LGUI(KC_F2),
+    KC_NO,          KC_LEFT_CTRL,   TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    KC_MS_WH_DOWN,                                  LGUI(KC_C),     KC_LEFT,        KC_UP,          KC_RIGHT,       LGUI(KC_Z),     LGUI(KC_D),
+    QK_LLCK,        KC_NO,          KC_MS_WH_LEFT,  KC_HYPR,        MEH_T(KC_MS_WH_RIGHT),KC_PGDN,                                        LGUI(KC_V),     KC_BSPC,        KC_DOWN,        KC_DELETE,      KC_F2,          QK_LLCK,
                                                     KC_TRANSPARENT, KC_NO,                                          KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
@@ -265,4 +265,40 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_0, dance_0_finished, dance_0_reset),
         [DANCE_1] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_1, dance_1_finished, dance_1_reset),
         [DANCE_2] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_2, dance_2_finished, dance_2_reset),
+};
+
+
+
+
+// Implement a custom shift layer
+const key_override_t amperstand_ko = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, KC_AMPR);       // [ -> &
+const key_override_t circumflex_ko = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_CIRC);       // { -> ^
+const key_override_t hash_ko = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_HASH);             // ( -> #
+const key_override_t equals_ko = ko_make_basic(MOD_MASK_SHIFT, KC_LABK, KC_EQL);            // < -> =
+const key_override_t pipe_ko = ko_make_basic(MOD_MASK_SHIFT, KC_RABK, KC_PIPE);             // > -> |
+const key_override_t dollar_ko = ko_make_basic(MOD_MASK_SHIFT, KC_RPRN, KC_DLR);            // ) -> $
+const key_override_t percent_ko = ko_make_basic(MOD_MASK_SHIFT, KC_RBRC, KC_PERC);          // ] -> %
+const key_override_t asterisk_ko = ko_make_basic(MOD_MASK_SHIFT, KC_RCBR, KC_ASTR);         // } -> *
+const key_override_t tilde_ko = ko_make_basic(MOD_MASK_SHIFT, KC_GRAVE, KC_TILD);           // ` -> ~
+const key_override_t plus_ko = ko_make_basic(MOD_MASK_SHIFT, KC_DQUO, KC_PLUS);             // " -> +
+const key_override_t at_ko = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, KC_AT);                 // ' -> @
+const key_override_t colon_ko = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_DOT);              // . -> :
+const key_override_t semicolon_ko = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);        // , -> ;
+const key_override_t backslash_ko = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);        // slash -> backslash
+
+const key_override_t **key_overrides = (const key_override_t *[]){
+    &amperstand_ko,
+    &circumflex_ko,
+    &hash_ko,
+    &equals_ko,
+    &pipe_ko,
+    &dollar_ko,
+    &percent_ko,
+    &asterisk_ko,
+    &tilde_ko,
+    &plus_ko,
+    &at_ko,
+    &colon_ko,
+    &semicolon_ko,
+    &backslash_ko
 };
