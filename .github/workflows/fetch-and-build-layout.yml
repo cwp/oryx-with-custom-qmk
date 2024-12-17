@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       layout_id:
-        description: "Layout id available in URL https://configure.zsa.io/voyager/layouts/[ID_IS_HERE]/latest"
+        description: "Oryx layout id"
         required: true
-        default: "g7jjw"
+        default: "jY3qa"
       layout_geometry:
         description: "Keyboard type"
         type: choice
