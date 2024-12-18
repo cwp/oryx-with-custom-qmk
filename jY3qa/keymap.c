@@ -120,34 +120,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 
 // Implement a custom shift layer
-const key_override_t amperstand_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LBRC, KC_AMPR, 1, MOD_MASK_CAG);       // [ -> &
-const key_override_t circumflex_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LCBR, KC_CIRC, 1, MOD_MASK_CAG);       // { -> ^
-const key_override_t hash_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LPRN, KC_HASH, 1, MOD_MASK_CAG);             // ( -> #
-const key_override_t equals_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LABK, KC_EQL, 1, MOD_MASK_CAG);            // < -> =
-const key_override_t pipe_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RABK, KC_PIPE, 1, MOD_MASK_CAG);             // > -> |
-const key_override_t dollar_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RPRN, KC_DLR, 1, MOD_MASK_CAG);            // ) -> $
-const key_override_t percent_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RBRC, KC_PERC, 1, MOD_MASK_CAG);          // ] -> %
-const key_override_t asterisk_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RCBR, KC_ASTR, 1, MOD_MASK_CAG);         // } -> *
-const key_override_t tilde_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_GRAVE, KC_TILD, 1, MOD_MASK_CAG);           // ` -> ~
-const key_override_t plus_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_DQUO, KC_PLUS, 1, MOD_MASK_CAG);             // " -> +
-const key_override_t at_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_QUOT, KC_AT, 1, MOD_MASK_CAG);                 // ' -> @
-const key_override_t colon_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_DOT, KC_DOT, 1, MOD_MASK_CAG);              // . -> :
-const key_override_t semicolon_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_COMM, KC_SCLN, 1, MOD_MASK_CAG);        // , -> ;
+// const key_override_t amperstand_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LBRC, KC_AMPR, 1, MOD_MASK_CAG);       // [ -> &
+// const key_override_t circumflex_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LCBR, KC_CIRC, 1, MOD_MASK_CAG);       // { -> ^
+// const key_override_t hash_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LPRN, KC_HASH, 1, MOD_MASK_CAG);             // ( -> #
+// const key_override_t equals_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LABK, KC_EQL, 1, MOD_MASK_CAG);            // < -> =
+// const key_override_t pipe_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RABK, KC_PIPE, 1, MOD_MASK_CAG);             // > -> |
+// const key_override_t dollar_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RPRN, KC_DLR, 1, MOD_MASK_CAG);            // ) -> $
+// const key_override_t percent_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RBRC, KC_PERC, 1, MOD_MASK_CAG);          // ] -> %
+// const key_override_t asterisk_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RCBR, KC_ASTR, 1, MOD_MASK_CAG);         // } -> *
+// const key_override_t tilde_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_GRAVE, KC_TILD, 1, MOD_MASK_CAG);           // ` -> ~
+// const key_override_t plus_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_DQUO, KC_PLUS, 1, MOD_MASK_CAG);             // " -> +
+// const key_override_t at_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_QUOT, KC_AT, 1, MOD_MASK_CAG);                 // ' -> @
+// const key_override_t colon_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_DOT, KC_DOT, 1, MOD_MASK_CAG);              // . -> :
+// const key_override_t semicolon_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_COMM, KC_SCLN, 1, MOD_MASK_CAG);        // , -> ;
 const key_override_t backslash_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS, 1, MOD_MASK_CAG);        // slash -> backslash
 
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &amperstand_ko,
-    &circumflex_ko,
-    &hash_ko,
-    &equals_ko,
-    &pipe_ko,
-    &dollar_ko,
-    &percent_ko,
-    &asterisk_ko,
-    &tilde_ko,
-    &plus_ko,
-    &at_ko,
-    &colon_ko,
-    &semicolon_ko,
+    // &amperstand_ko,
+//     &circumflex_ko,
+//     &hash_ko,
+//     &equals_ko,
+//     &pipe_ko,
+//     &dollar_ko,
+//     &percent_ko,
+//     &asterisk_ko,
+//     &tilde_ko,
+//     &plus_ko,
+//     &at_ko,
+//     &colon_ko,
+//     &semicolon_ko,
     &backslash_ko
 };
