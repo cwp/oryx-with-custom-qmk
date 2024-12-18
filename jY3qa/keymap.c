@@ -133,7 +133,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // const key_override_t at_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_QUOT, KC_AT, 1, MOD_MASK_CAG);                 // ' -> @
 // const key_override_t colon_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_DOT, KC_DOT, 1, MOD_MASK_CAG);              // . -> :
 // const key_override_t semicolon_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_COMM, KC_SCLN, 1, MOD_MASK_CAG);        // , -> ;
-const key_override_t backslash_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS, 1, MOD_MASK_CAG);        // slash -> backslash
+const key_override_t backslash_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS, 0, MOD_MASK_CAG);        // slash -> backslash
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     // &amperstand_ko,
