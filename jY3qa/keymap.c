@@ -1,3 +1,4 @@
+#include "features/achordion.h"
 #include QMK_KEYBOARD_H
 #include "version.h"
 #define MOON_LED_LEVEL LED_LEVEL
@@ -113,6 +114,7 @@ bool rgb_matrix_indicators_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (!process_achordion(keycode, record)) { return false; }
   switch (keycode) {
     case ST_MACRO_0:
     if (record->event.pressed) {
@@ -285,6 +287,10 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 
+
+void matrix_scan_user(void) {
+  achordion_task();
+}
 
 // Implement a custom shift layer
 const key_override_t amperstand_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LBRC, KC_AMPR, 1, MOD_MASK_CAG); // [ -> &

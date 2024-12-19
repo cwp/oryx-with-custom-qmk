@@ -13,3 +13,4 @@ LAYER_LOCK_ENABLE = yes
 
 # Custom rules
 KEY_OVERRIDE_ENABLE = yes
+SRC += features/achordion.c
