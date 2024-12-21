@@ -292,6 +292,20 @@ void matrix_scan_user(void) {
   achordion_task();
 }
 
+bool achordion_eager_mod(uint8_t mod) {
+  switch (mod) {
+    // Eagerly apply left-hand mods
+    case MOD_LCTL:
+    case MOD_LALT:
+    case MOD_LGUI:
+    case MOD_LSFT:
+      return true;
+
+    default:
+      return false;
+  }
+}
+
 // Implement a custom shift layer
 const key_override_t amperstand_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_LBRC, KC_AMPR, 1, MOD_MASK_CAG); // [ -> &
 const key_override_t asterisk_ko = ko_make_with_layers_and_negmods(MOD_MASK_SHIFT, KC_RCBR, KC_ASTR, 1, MOD_MASK_CAG);   // } -> *
