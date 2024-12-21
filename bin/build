@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Default values
+geometry="voyager"
+layout_id="jY3qa"
+
+# Parse command line arguments
+while getopts "g:l:" opt; do
+  case $opt in
+    g) geometry="$OPTARG";;
+    l) layout_id="$OPTARG";;
+    \?) echo "Invalid option -$OPTARG" >&2;;
+  esac
+done
+
+# Set the root directory
+root=$(git rev-parse --show-toplevel)
+cd "${root}"
+
+# read the firmware version
+firmware_version="$(cat .firmware_version)"
+
+
+# Set keyboard directory and make prefix based on firmware version
+if [ "${firmware_version}" -ge 24 ]; then
+  keyboard_directory="qmk_firmware/keyboards/zsa"
+  make_prefix="zsa/"
+else
+  keyboard_directory="qmk_firmware/keyboards"
+  make_prefix=""
+fi
+geodir="${keyboard_directory}/${geometry}/keymaps"
+
+# Copy layout files to the qmk folder
+mkdir -p "${geodir}"
+rm -rf "${geodir}/${layout_id}"
+cp -r "${layout_id}" "${geodir}"
+
+# Build the layout
+docker exec qmk_build /bin/sh -c "make ${make_prefix}${geometry}:${layout_id}"
+
+# Find and export built layout
+normalized_layout_geometry="$(echo "${geometry}" | sed 's/\//_/g')"
+built_layout_file=$(find ./qmk_firmware -maxdepth 1 -type f -regex ".*${normalized_layout_geometry}.*.bin$")
+
+echo "Built layout: ${built_layout_file}"

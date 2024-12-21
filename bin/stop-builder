@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker stop qmk_build
+docker rm qmk_build

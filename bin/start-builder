@@ -1,0 +1,13 @@
+#!/bin/bash
+
+root=$(git rev-parse --show-toplevel)
+cd "${root}"
+
+# read the firmware version from the .firmware_version file
+firmware_version=$(cat .firmware_version)
+
+# start the container
+docker run -d --name qmk_build -v ./qmk_firmware:/root qmk tail -f /dev/null
+
+# set up the build environment inside the container
+docker exec qmk_build /bin/sh -c "qmk setup zsa/qmk_firmware -b firmware${firmware_version} -y"

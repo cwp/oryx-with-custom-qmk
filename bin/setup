@@ -1,0 +1,25 @@
+#!/bin/bash
+
+root=$(git rev-parse --show-toplevel)
+
+# query the Oryx API for the firmware version
+response=$(curl \
+  --location 'https://oryx.zsa.io/graphql' \
+  --header 'Content-Type: application/json' \
+  --data '{"query":"query getLayout($hashId: String!, $revisionId: String!, $geometry: String) {layout(hashId: $hashId, geometry: $geometry, revisionId: $revisionId) {  revision { hashId, qmkVersion, title }}}","variables":{"hashId":"jY3qa","geometry":"voyager","revisionId":"latest"}}' \
+  | jq '.data.layout.revision | [.hashId, .qmkVersion, .title]' \
+)
+hash_id=$(echo "${response}" | jq -r '.[0]')
+firmware_version=$(printf "%.0f" $(echo "${response}" | jq -r '.[1]'))
+echo -n "$firmware_version" > "${root}/.firmware_version"
+
+# check out the firmware submodule
+cd "${root}/qmk_firmware"
+git submodule update --init --remote
+git fetch origin "firmware${firmware_version}"
+git checkout -B "firmware${firmware_version}" "origin/firmware${firmware_version}"
+git submodule update --init --recursive
+
+# build the docker image
+cd "${root}"
+docker build -t qmk .
